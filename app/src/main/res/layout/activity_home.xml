@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".HomeActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/myToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/TransparentActionBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:titleTextColor="#363231" />
+
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:fontFamily="@font/specialelite_regular"
+                android:text="Golaghat"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/myToolbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/toolbarSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/specialelite_regular"
+                android:text="Today"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/specialelite_regular"
+        android:text="18"
+        android:textColor="@color/black"
+        android:textSize="100sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <TextView
+        android:id="@+id/weatherText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/specialelite_regular"
+        android:text="Partly Cloudy"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temperature" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherText"
+        app:srcCompat="@drawable/api_img" />
+
+    <ImageView
+        android:id="@+id/humid_bg"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:srcCompat="@drawable/small_ic_bg" />
+
+    <ImageView
+        android:id="@+id/humidIc"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/humid_bg"
+        app:layout_constraintEnd_toEndOf="@+id/humid_bg"
+        app:layout_constraintStart_toStartOf="@+id/humid_bg"
+        app:layout_constraintTop_toTopOf="@+id/humid_bg"
+        app:srcCompat="@drawable/humidity_ic" />
+
+    <TextView
+        android:id="@+id/humidity_value"
+        android:layout_width="75dp"
+        android:layout_height="30dp"
+        android:background="@drawable/value_txt_bg"
+        android:fontFamily="@font/specialelite_regular"
+        android:gravity="center"
+        android:text="90%"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/humid_bg"
+        app:layout_constraintStart_toEndOf="@+id/humidIc"
+        app:layout_constraintTop_toTopOf="@+id/humid_bg" />
+
+    <TextView
+        android:id="@+id/humidity_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/specialelite_regular"
+        android:text="Humidity"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/humidIc"
+        app:layout_constraintTop_toBottomOf="@+id/humidity_value" />
+
+
+    <ImageView
+        android:id="@+id/wind_bg"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/humidity_value"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:srcCompat="@drawable/small_ic_bg" />
+
+    <ImageView
+        android:id="@+id/windIc"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/wind_bg"
+        app:layout_constraintEnd_toEndOf="@+id/wind_bg"
+        app:layout_constraintStart_toStartOf="@+id/wind_bg"
+        app:layout_constraintTop_toTopOf="@+id/wind_bg"
+        app:srcCompat="@drawable/humidity_ic" />
+
+    <TextView
+        android:id="@+id/wind_value"
+        android:layout_width="75dp"
+        android:layout_height="30dp"
+        android:background="@drawable/value_txt_bg"
+        android:fontFamily="@font/specialelite_regular"
+        android:gravity="center"
+        android:text="90%"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/wind_bg"
+        app:layout_constraintStart_toEndOf="@+id/windIc"
+        app:layout_constraintTop_toTopOf="@+id/wind_bg" />
+
+    <TextView
+        android:id="@+id/wind_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/specialelite_regular"
+        android:text="Wind"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/wind_value"
+        app:layout_constraintStart_toEndOf="@+id/windIc"
+        app:layout_constraintTop_toBottomOf="@+id/wind_value" />
+
+    <ImageView
+        android:id="@+id/feelsLike"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humidity_tag"
+        app:srcCompat="@drawable/small_ic_bg" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
